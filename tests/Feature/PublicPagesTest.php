@@ -14,14 +14,14 @@ class PublicPagesTest extends TestCase
     {
         $this->get('/')
             ->assertOk()
-            ->assertSee('System do sprawiedliwego rozliczania wspólnych wydatków');
+            ->assertSee('Rozliczaj wydatki w grupie prosto i przejrzyście.');
     }
 
     public function test_dashboard_is_visible_without_login(): void
     {
         $this->get('/dashboard')
             ->assertOk()
-            ->assertSee('System rozliczania wspólnych wydatków');
+            ->assertSee('Zarządzaj grupami i wspólnymi rachunkami.');
     }
 
     public function test_regular_user_does_not_see_admin_link(): void
