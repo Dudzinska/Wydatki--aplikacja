@@ -57,9 +57,8 @@
 
                     <div class="rounded-2xl bg-gray-950 p-6 text-white shadow-lg">
                         <h2 class="text-lg font-black">Panel rozliczen</h2>
-                        <p class="mt-2 text-sm leading-6 text-gray-300">
-                            Podzial dziala po rowno: kazdy wydatek jest dzielony miedzy aktualnych czlonkow grupy, a saldo pokazuje roznice miedzy zaplaconymi kwotami i naleznosciami.
-                        </p>
+
+                   
                         <div class="mt-5 space-y-4">
                             @foreach($group->getBalances() as $data)
                                 <div class="border-b border-gray-800 pb-3">
@@ -85,7 +84,7 @@
                         <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                             <div>
                                 <h2 class="text-lg font-black text-gray-900 dark:text-gray-100">Dodaj wydatek</h2>
-                                <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Nazwa i dodatnia kwota sa wymagane. Bledy nie kasuja wpisanych danych.</p>
+
                             </div>
                         </div>
                         <form action="{{ route('bills.store', $group) }}" method="POST" class="mt-5 grid grid-cols-1 gap-4 md:grid-cols-4">
