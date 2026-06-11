@@ -4,10 +4,6 @@
             <section class="glamour-hero rounded-3xl p-8 text-white shadow-2xl">
                 <p class="text-sm font-bold uppercase tracking-[0.22em] text-fuchsia-100">Katalog grup</p>
                 <h1 class="mt-4 text-3xl font-black sm:text-4xl">Przegladaj grupy</h1>
-                <p class="mt-4 max-w-3xl text-sm leading-7 text-fuchsia-50/95">
-                    Publiczny podglad pozwala sprawdzic grupy, podstawowe statystyki, ostatnie wydatki i propozycje rozliczen.
-                    Dodawanie, edycja oraz usuwanie danych wymaga zalogowania.
-                </p>
             </section>
 
             <section class="glamour-card rounded-2xl border p-6 shadow-xl">
@@ -40,9 +36,9 @@
                             <option value="members_desc" @selected(($filters['sort'] ?? '') === 'members_desc')>Najwiecej czlonkow</option>
                         </select>
                     </div>
-                    <div class="md:col-span-5 flex flex-wrap gap-3">
-                        <button type="submit" class="rounded-xl bg-fuchsia-600 px-5 py-3 text-sm font-black text-white hover:bg-fuchsia-700">Filtruj</button>
-                        <a href="{{ route('public.groups.index') }}" class="rounded-xl border border-slate-300 px-5 py-3 text-sm font-black text-slate-700 hover:border-fuchsia-500 hover:text-fuchsia-700 dark:border-slate-700 dark:text-slate-200 dark:hover:border-fuchsia-500 dark:hover:text-fuchsia-300">Wyczysc</a>
+                    <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 md:col-span-5 md:flex md:flex-wrap">
+                        <button type="submit" class="w-full rounded-xl bg-fuchsia-600 px-5 py-3 text-sm font-black text-white hover:bg-fuchsia-700 sm:w-auto">Filtruj</button>
+                        <a href="{{ route('public.groups.index') }}" class="w-full rounded-xl border border-slate-300 px-5 py-3 text-center text-sm font-black text-slate-700 hover:border-fuchsia-500 hover:text-fuchsia-700 dark:border-slate-700 dark:text-slate-200 dark:hover:border-fuchsia-500 dark:hover:text-fuchsia-300 sm:w-auto">Wyczysc</a>
                     </div>
                 </form>
             </section>

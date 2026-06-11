@@ -65,7 +65,7 @@
                                 <option value="members_desc" @selected(($filters['sort'] ?? '') === 'members_desc')>Najwiecej osob</option>
                             </select>
                         </div>
-                        <div class="grid grid-cols-2 gap-2 md:col-span-3">
+                        <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 md:col-span-12 lg:col-span-3">
                             <button type="submit" class="w-full rounded-xl bg-gray-900 px-4 py-3 text-sm font-black text-white hover:bg-gray-800 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200">
                                 Filtruj
                             </button>
