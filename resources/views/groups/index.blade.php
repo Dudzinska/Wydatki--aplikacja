@@ -65,11 +65,11 @@
                                 <option value="members_desc" @selected(($filters['sort'] ?? '') === 'members_desc')>Najwiecej osob</option>
                             </select>
                         </div>
-                        <div class="flex flex-col gap-2 sm:flex-row sm:flex-wrap md:col-span-12 lg:col-span-3">
-                            <button type="submit" class="w-full min-w-[7rem] whitespace-nowrap rounded-xl bg-gray-900 px-4 py-3 text-sm font-black text-white hover:bg-gray-800 sm:w-auto sm:flex-1 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200">
+                        <div class="flex flex-col gap-2 md:col-span-12 lg:col-span-3 lg:self-start lg:pt-6">
+                            <button type="submit" class="w-full min-w-[7rem] whitespace-nowrap rounded-xl bg-gray-900 px-4 py-3 text-sm font-black text-white hover:bg-gray-800 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200">
                                 Filtruj
                             </button>
-                            <a href="{{ route('groups.index') }}" class="w-full min-w-[7rem] whitespace-nowrap rounded-xl border border-gray-300 px-4 py-3 text-center text-sm font-black text-gray-700 hover:border-indigo-400 hover:text-indigo-700 sm:w-auto sm:flex-1 dark:border-gray-700 dark:text-gray-200 dark:hover:border-indigo-500 dark:hover:text-indigo-300">
+                            <a href="{{ route('groups.index') }}" class="w-full min-w-[7rem] whitespace-nowrap rounded-xl border border-gray-300 px-4 py-3 text-center text-sm font-black text-gray-700 hover:border-indigo-400 hover:text-indigo-700 dark:border-gray-700 dark:text-gray-200 dark:hover:border-indigo-500 dark:hover:text-indigo-300">
                                 Wyczyść
                             </a>
                         </div>
