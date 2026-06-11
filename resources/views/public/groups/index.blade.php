@@ -5,7 +5,8 @@
                 <p class="text-sm font-bold uppercase tracking-[0.22em] text-fuchsia-100">Katalog grup</p>
                 <h1 class="mt-4 text-3xl font-black sm:text-4xl">Przegladaj grupy</h1>
                 <p class="mt-4 max-w-3xl text-sm leading-7 text-fuchsia-50/95">
-                    Ten widok jest publiczny i tylko do odczytu. Zaloguj sie, aby tworzyc, edytowac lub usuwac wlasne grupy.
+                    Publiczny podglad pozwala sprawdzic grupy, podstawowe statystyki, ostatnie wydatki i propozycje rozliczen.
+                    Dodawanie, edycja oraz usuwanie danych wymaga zalogowania.
                 </p>
             </section>
 

@@ -65,7 +65,7 @@ class DatabaseSeeder extends Seeder
             $this->command->info('=== TESTY LOGIKI BAZODANOWEJ (MySQL) ===');
 
             $balance = DB::select('SELECT get_user_net_balance(?, ?) AS balance', [$oliwia->id, $groupId])[0]->balance;
-            $this->command->comment('Saldo Krystiana (funkcja SQL): ' . $balance . ' zl');
+            $this->command->comment('Saldo Oliwii (funkcja SQL): ' . $balance . ' zl');
 
             try {
                 DB::table('bill_item_user')->insert([
@@ -81,7 +81,7 @@ class DatabaseSeeder extends Seeder
         }
 
         $this->command->info('Konta demo (haslo: password):');
-        $this->command->line('  admin: krystian@example.com');
+        $this->command->line('  admin: oliwia@example.com');
         $this->command->line('  user:  adam@example.com, ewa@example.com');
     }
 }

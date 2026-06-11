@@ -33,6 +33,8 @@ class PublicCatalogTest extends TestCase
             ->assertOk()
             ->assertSee('Podglad grupy')
             ->assertSee('Publiczna grupa')
+            ->assertDontSee('Dodaj wydatek')
+            ->assertDontSee('Edytuj grupe')
             ->assertDontSee('Edytuj')
             ->assertDontSee('Usun');
     }

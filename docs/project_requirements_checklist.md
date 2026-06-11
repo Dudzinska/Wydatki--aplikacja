@@ -2,6 +2,8 @@
 
 Punkt odniesienia: <https://ia.lazysolutions.pl/project_requirements.html>
 
+Szczegolowa dokumentacja uzytkownika, CRUD, uprawnien i logiki biznesowej znajduje sie w `docs/user_manual.md`.
+
 ## Pokrycie wymagan funkcjonalnych
 
 ### Ocena 3.0
@@ -9,6 +11,7 @@ Punkt odniesienia: <https://ia.lazysolutions.pl/project_requirements.html>
 - [x] Relacje miedzy zasobami (`groups`, `bills`, `bill_items`, `users`).
 - [x] Panel administratora do zarzadzania kontami i rolami.
 - [x] Lista zasobow z filtrowaniem i sortowaniem (`groups.index`, `public.groups.index`, `groups.show`, `admin.users.index`).
+- [x] Podrecznik uzytkownika i opis CRUD w `docs/user_manual.md`.
 
 ### Ocena 4.0
 - [x] Rozroznienie rol `admin` oraz `user` (middleware `admin`, role w modelu `User`).
@@ -17,6 +20,7 @@ Punkt odniesienia: <https://ia.lazysolutions.pl/project_requirements.html>
 - [x] Dostep publiczny read-only dla niezalogowanych:
   - `GET /katalog-grup`
   - `GET /katalog-grup/{group}`
+- [x] Dokumentacja rol, uprawnien i zarzadzania zasobami w `docs/user_manual.md`.
 
 ### Ocena 5.0
 - [x] Dodatkowa logika biznesowa: algorytm propozycji splat minimalizujacy liczbe przelewow (`Group::getSettlementPlan()`).
@@ -25,11 +29,13 @@ Punkt odniesienia: <https://ia.lazysolutions.pl/project_requirements.html>
   - statystyki wydatkow w grupie,
   - publiczny katalog grup,
   - automatyczne podpowiedzi rozliczen.
+- [x] Dokumentacja nietrywialnej logiki biznesowej w `docs/user_manual.md`.
 
 ## Warstwa UI / UX
 - [x] Motyw glamour (gradientowe sekcje, karty, delikatne akcenty kolorystyczne) w layoutach i kluczowych widokach.
 
 ## Dokumentacja
+- [x] Podrecznik uzytkownika i opis wymagan: `docs/user_manual.md`.
 - [x] Podrecznik uzytkownika i opis wymagan: `docs/user_manual_and_requirements.md`.
 - [x] Opis CRUD zasobu zaleznego od innych zasobow wraz z walidacja serwera/klienta.
 - [x] Opis publicznego dostepu read-only, rol, uprawnien, zarzadzania wlasnymi zasobami i panelu administratora.

@@ -2,12 +2,12 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex items-center">
-                <a href="{{ Auth::check() ? route('dashboard') : route('home') }}" class="text-lg font-black tracking-tight text-indigo-700 dark:text-indigo-300">
+                <a href="{{ auth()->check() ? route('dashboard') : route('home') }}" class="text-lg font-black tracking-tight text-indigo-700 dark:text-indigo-300">
                     BillsBuddy
                 </a>
 
                 <div class="hidden space-x-8 sm:ms-10 sm:flex">
-                    <x-nav-link :href="Auth::check() ? route('dashboard') : route('home')" :active="request()->routeIs('dashboard') || request()->routeIs('home')">
+                    <x-nav-link :href="auth()->check() ? route('dashboard') : route('home')" :active="request()->routeIs('dashboard') || request()->routeIs('home')">
                         {{ __('Start') }}
                     </x-nav-link>
 
@@ -76,7 +76,7 @@
 
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="Auth::check() ? route('dashboard') : route('home')" :active="request()->routeIs('dashboard') || request()->routeIs('home')">
+            <x-responsive-nav-link :href="auth()->check() ? route('dashboard') : route('home')" :active="request()->routeIs('dashboard') || request()->routeIs('home')">
                 {{ __('Start') }}
             </x-responsive-nav-link>
 

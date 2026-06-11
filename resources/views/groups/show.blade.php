@@ -141,7 +141,7 @@
                             @csrf
                             <div class="md:col-span-2">
                                 <label for="description" class="text-sm font-bold text-gray-700 dark:text-gray-200">Nazwa wydatku</label>
-                                <input id="description" type="text" name="description" value="{{ old('description') }}" placeholder="Np. obiad" class="mt-1 w-full rounded-xl border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100" required>
+                                <input id="description" type="text" name="description" value="{{ old('description') }}" maxlength="255" pattern=".*[^\d\s].*" title="Nazwa wydatku nie moze skladac sie wylacznie z cyfr." placeholder="Np. obiad" class="mt-1 w-full rounded-xl border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100" required>
                                 <x-input-error :messages="$errors->get('description')" class="mt-2" />
                             </div>
                             <div>
@@ -276,7 +276,7 @@
                                             <input type="hidden" name="bill_item_bill_id" value="{{ $bill->id }}">
                                             <div>
                                                 <label class="text-sm font-bold text-gray-700 dark:text-gray-200">Nazwa pozycji</label>
-                                                <input type="text" name="name" value="{{ $isOldBillItem ? old('name') : '' }}" class="mt-1 w-full rounded-lg border-gray-300 bg-white text-gray-900 text-sm dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100" required>
+                                                <input type="text" name="name" value="{{ $isOldBillItem ? old('name') : '' }}" maxlength="255" class="mt-1 w-full rounded-lg border-gray-300 bg-white text-gray-900 text-sm dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100" required>
                                                 @if($isOldBillItem)
                                                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
                                                 @endif
