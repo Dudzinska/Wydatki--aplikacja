@@ -36,9 +36,9 @@
                             <option value="members_desc" @selected(($filters['sort'] ?? '') === 'members_desc')>Najwiecej czlonkow</option>
                         </select>
                     </div>
-                    <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 md:col-span-5 md:flex md:flex-wrap">
-                        <button type="submit" class="w-full rounded-xl bg-fuchsia-600 px-5 py-3 text-sm font-black text-white hover:bg-fuchsia-700 sm:w-auto">Filtruj</button>
-                        <a href="{{ route('public.groups.index') }}" class="w-full rounded-xl border border-slate-300 px-5 py-3 text-center text-sm font-black text-slate-700 hover:border-fuchsia-500 hover:text-fuchsia-700 dark:border-slate-700 dark:text-slate-200 dark:hover:border-fuchsia-500 dark:hover:text-fuchsia-300 sm:w-auto">Wyczysc</a>
+                    <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap md:col-span-5">
+                        <button type="submit" class="w-full min-w-[7rem] whitespace-nowrap rounded-xl bg-fuchsia-600 px-5 py-3 text-sm font-black text-white hover:bg-fuchsia-700 sm:w-auto">Filtruj</button>
+                        <a href="{{ route('public.groups.index') }}" class="w-full min-w-[7rem] whitespace-nowrap rounded-xl border border-slate-300 px-5 py-3 text-center text-sm font-black text-slate-700 hover:border-fuchsia-500 hover:text-fuchsia-700 sm:w-auto dark:border-slate-700 dark:text-slate-200 dark:hover:border-fuchsia-500 dark:hover:text-fuchsia-300">Wyczysc</a>
                     </div>
                 </form>
             </section>
