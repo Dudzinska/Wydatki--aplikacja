@@ -10,12 +10,12 @@
                     @method('PUT')
                     <div>
                         <label for="name" class="text-sm font-bold text-gray-700 dark:text-gray-200">Nazwa grupy</label>
-                        <input id="name" type="text" name="name" value="{{ old('name', $group->name) }}" class="mt-1 w-full rounded-xl border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100" required>
+                        <input id="name" type="text" name="name" value="{{ old('name', $group->name) }}" maxlength="255" class="mt-1 w-full rounded-xl border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100" required>
                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
                     </div>
                     <div>
                         <label for="description" class="text-sm font-bold text-gray-700 dark:text-gray-200">Opis grupy</label>
-                        <textarea id="description" name="description" rows="5" class="mt-1 w-full rounded-xl border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100">{{ old('description', $group->description) }}</textarea>
+                        <textarea id="description" name="description" rows="5" maxlength="1000" class="mt-1 w-full rounded-xl border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100">{{ old('description', $group->description) }}</textarea>
                         <x-input-error :messages="$errors->get('description')" class="mt-2" />
                     </div>
                     <div class="flex flex-col gap-3 sm:flex-row">

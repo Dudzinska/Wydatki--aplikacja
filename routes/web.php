@@ -19,6 +19,9 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
+Route::get('/katalog-grup', [PublicGroupController::class, 'index'])->name('public.groups.index');
+Route::get('/katalog-grup/{group}', [PublicGroupController::class, 'show'])->name('public.groups.show');
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard', [
@@ -27,9 +30,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
             'billsCount' => Bill::count(),
         ]);
     })->name('dashboard');
-
-    Route::get('/katalog-grup', [PublicGroupController::class, 'index'])->name('public.groups.index');
-    Route::get('/katalog-grup/{group}', [PublicGroupController::class, 'show'])->name('public.groups.show');
 
     Route::resource('groups', GroupController::class)->except(['create']);
     Route::post('/groups/{group}/add-user', [GroupController::class, 'addUser'])->name('groups.add-user');
