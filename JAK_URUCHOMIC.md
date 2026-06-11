@@ -16,7 +16,7 @@ Laravel tworzy go automatycznie przy migracjach.
 
 ## Wymagania
 
-- PHP 8.2+
+- PHP 8.5
 - Composer
 - Node.js + npm
 

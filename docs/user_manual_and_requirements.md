@@ -204,7 +204,13 @@ Widok szczegolow grupy pokazuje:
 
 ## 5. Wymagania technologiczne
 
-Specyfikacja z dnia weryfikacji wskazuje PHP 8.5 i Laravel 13. Ten branch poprawia wymagania funkcjonalne, dokumentacyjne i bezpieczenstwo zaleznosci frontendowych. Aktualizacja glownego stacku wymaga osobnej migracji Composerem, poniewaz trzeba przebudowac `composer.lock`, sprawdzic kompatybilnosc pakietow Laravel oraz uruchomic pelny zestaw testow PHP w srodowisku z PHP i Composerem.
+Specyfikacja z dnia weryfikacji wskazuje PHP 8.5 i Laravel 13. Projekt jest zgodny z tym wymaganiem na poziomie zaleznosci Composer:
+
+- `composer.json` deklaruje PHP `^8.5`,
+- `composer.json` deklaruje Laravel Framework `^13.0`,
+- `composer.lock` wskazuje zablokowana wersje `laravel/framework` jako `v13.15.0`.
+
+Przed oddaniem projektu warto uruchomic pelny zestaw testow w srodowisku z PHP 8.5, Composerem i Node.js, aby potwierdzic zgodnosc runtime po instalacji zaleznosci.
 
 ## 6. Pytania do projektu
 
