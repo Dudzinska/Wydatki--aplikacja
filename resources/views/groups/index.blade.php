@@ -65,7 +65,7 @@
                                 <option value="members_desc" @selected(($filters['sort'] ?? '') === 'members_desc')>Najwiecej osob</option>
                             </select>
                         </div>
-                        <div class="{{ auth()->user()->isAdmin() ? 'md:col-span-2' : 'md:col-span-3' }} flex flex-wrap gap-2 md:flex-nowrap md:justify-end">
+                        <div class="flex flex-wrap gap-2 md:col-span-12">
                             <button type="submit" class="rounded-xl bg-gray-900 px-5 py-3 text-sm font-black text-white hover:bg-gray-800 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200">
                                 Filtruj
                             </button>
