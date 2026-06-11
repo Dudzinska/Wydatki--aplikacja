@@ -25,7 +25,9 @@ class PublicCatalogTest extends TestCase
         $this->get(route('public.groups.index'))
             ->assertOk()
             ->assertSee('Publiczna grupa')
-            ->assertSee('Read-only');
+            ->assertSee('Read-only')
+            ->assertDontSee('Edytuj')
+            ->assertDontSee('Usun');
 
         $this->get(route('public.groups.show', $group))
             ->assertOk()
@@ -33,6 +35,7 @@ class PublicCatalogTest extends TestCase
             ->assertSee('Publiczna grupa')
             ->assertDontSee('Dodaj wydatek')
             ->assertDontSee('Edytuj grupe')
+            ->assertDontSee('Edytuj')
             ->assertDontSee('Usun');
     }
 

@@ -37,7 +37,7 @@
 
             <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900">
                 <h2 class="text-lg font-black text-gray-900 dark:text-gray-100">Wyszukiwarka uzytkownikow</h2>
-                <form action="{{ route('admin.users.index') }}" method="GET" class="mt-5 grid gap-4 md:grid-cols-4">
+                <form action="{{ route('admin.users.index') }}" method="GET" class="mt-5 grid gap-4 md:grid-cols-5">
                     <div class="md:col-span-2">
                         <label for="search" class="text-sm font-bold text-gray-700 dark:text-gray-200">Imie lub e-mail</label>
                         <input id="search" type="search" name="search" value="{{ $filters['search'] ?? '' }}" class="mt-1 w-full rounded-xl border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100">
@@ -48,6 +48,16 @@
                             <option value="">Wszystkie</option>
                             <option value="user" @selected(($filters['role'] ?? '') === 'user')>user</option>
                             <option value="admin" @selected(($filters['role'] ?? '') === 'admin')>admin</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="sort" class="text-sm font-bold text-gray-700 dark:text-gray-200">Sortowanie</label>
+                        <select id="sort" name="sort" class="mt-1 w-full rounded-xl border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100">
+                            <option value="name_asc" @selected(($filters['sort'] ?? 'name_asc') === 'name_asc')>Imie A-Z</option>
+                            <option value="name_desc" @selected(($filters['sort'] ?? '') === 'name_desc')>Imie Z-A</option>
+                            <option value="newest" @selected(($filters['sort'] ?? '') === 'newest')>Najnowsze konta</option>
+                            <option value="oldest" @selected(($filters['sort'] ?? '') === 'oldest')>Najstarsze konta</option>
+                            <option value="groups_desc" @selected(($filters['sort'] ?? '') === 'groups_desc')>Najwiecej grup</option>
                         </select>
                     </div>
                     <div class="flex items-end gap-2">

@@ -59,6 +59,9 @@
                                 Przejdz do grup
                             </a>
                         @else
+                            <a href="{{ route('public.groups.index') }}" class="inline-flex justify-center rounded-xl bg-white px-5 py-3 text-sm font-black text-fuchsia-700 hover:bg-fuchsia-50">
+                                Przegladaj katalog
+                            </a>
                             <a href="{{ route('login') }}" class="inline-flex justify-center rounded-xl bg-white px-5 py-3 text-sm font-black text-fuchsia-700 hover:bg-fuchsia-50">
                                 Zaloguj sie
                             </a>
