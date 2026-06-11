@@ -42,7 +42,7 @@ Szczegolowa dokumentacja uzytkownika, CRUD, uprawnien i logiki biznesowej znajdu
 - [x] Opis nietrywialnej logiki biznesowej i funkcji uzytkownika koncowego.
 
 ## Wymagania technologiczne
-- [ ] Specyfikacja wskazuje PHP 8.5 i Laravel 13. Repozytorium nadal deklaruje PHP `^8.2` i Laravel `^12.0`; migracja glownego stacku wymaga osobnego przebudowania `composer.lock` i pelnej weryfikacji PHP/Composer.
+- [x] Specyfikacja wskazuje PHP 8.5 i Laravel 13. Repozytorium deklaruje PHP `^8.5` i Laravel `^13.0` w `composer.json`, a `composer.lock` wskazuje `laravel/framework` w wersji `v13.15.0`.
 
 ## Uwaga organizacyjna
 - Pytania egzaminacyjne z dokumentu (sekcja "Pytania do projektu") wymagaja przygotowania odpowiedzi opisowych i sa poza zakresem samej implementacji kodu.

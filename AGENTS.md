@@ -2,7 +2,7 @@
 
 ## Cursor Cloud specific instructions
 
-BillsBuddy is a single Laravel 12 application (PHP 8.3) for splitting group bills/expenses, with a Vite + Tailwind frontend (Alpine.js). There is one service to run: the Laravel app, optionally with the Vite dev server for hot asset reloading.
+BillsBuddy is a single Laravel 13 application (PHP 8.5) for splitting group bills/expenses, with a Vite + Tailwind frontend (Alpine.js). There is one service to run: the Laravel app, optionally with the Vite dev server for hot asset reloading.
 
 ### Environment notes
 - Database is **SQLite** by default (`database/database.sqlite`), configured via `DB_CONNECTION=sqlite` in `.env`. No external DB server is needed.
