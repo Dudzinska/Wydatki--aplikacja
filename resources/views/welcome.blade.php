@@ -23,10 +23,10 @@
 
                     <div class="flex flex-wrap items-center gap-3">
                         <x-theme-toggle />
+                        <a href="{{ route('public.groups.index') }}" class="rounded-lg border border-fuchsia-200 px-4 py-2 text-sm font-bold text-fuchsia-700 hover:bg-fuchsia-50 dark:border-fuchsia-900 dark:text-fuchsia-300 dark:hover:bg-fuchsia-950/40">
+                            Katalog grup
+                        </a>
                         @auth
-                            <a href="{{ route('public.groups.index') }}" class="rounded-lg border border-fuchsia-200 px-4 py-2 text-sm font-bold text-fuchsia-700 hover:bg-fuchsia-50 dark:border-fuchsia-900 dark:text-fuchsia-300 dark:hover:bg-fuchsia-950/40">
-                                Katalog grup
-                            </a>
                             <a href="{{ route('groups.index') }}" class="rounded-lg bg-fuchsia-600 px-4 py-2 text-sm font-bold text-white hover:bg-fuchsia-700">
                                 Moje grupy
                             </a>
@@ -61,6 +61,9 @@
                         @else
                             <a href="{{ route('login') }}" class="inline-flex justify-center rounded-xl bg-white px-5 py-3 text-sm font-black text-fuchsia-700 hover:bg-fuchsia-50">
                                 Zaloguj sie
+                            </a>
+                            <a href="{{ route('public.groups.index') }}" class="inline-flex justify-center rounded-xl border border-white/80 px-5 py-3 text-sm font-black text-white hover:bg-white/10">
+                                Przegladaj katalog
                             </a>
                             @if(Route::has('register'))
                                 <a href="{{ route('register') }}" class="inline-flex justify-center rounded-xl border border-white/80 px-5 py-3 text-sm font-black text-white hover:bg-white/10">
