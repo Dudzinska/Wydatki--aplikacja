@@ -54,17 +54,6 @@
                                 <input id="owner" type="search" name="owner" value="{{ $filters['owner'] ?? '' }}" maxlength="255" class="mt-1 w-full rounded-xl border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100">
                             </div>
                         @endif
-                        <div class="{{ auth()->user()->isAdmin() ? 'md:col-span-3' : 'md:col-span-3' }}">
-                            <label for="sort" class="text-sm font-bold text-gray-700 dark:text-gray-200">Sortowanie</label>
-                            <select id="sort" name="sort" class="mt-1 w-full rounded-xl border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100">
-                                <option value="name_asc" @selected(($filters['sort'] ?? 'name_asc') === 'name_asc')>Nazwa A-Z</option>
-                                <option value="name_desc" @selected(($filters['sort'] ?? '') === 'name_desc')>Nazwa Z-A</option>
-                                <option value="newest" @selected(($filters['sort'] ?? '') === 'newest')>Najnowsze</option>
-                                <option value="oldest" @selected(($filters['sort'] ?? '') === 'oldest')>Najstarsze</option>
-                                <option value="bills_desc" @selected(($filters['sort'] ?? '') === 'bills_desc')>Najwiecej wydatkow</option>
-                                <option value="members_desc" @selected(($filters['sort'] ?? '') === 'members_desc')>Najwiecej osob</option>
-                            </select>
-                        </div>
                         <div class="flex flex-wrap gap-2 md:col-span-12">
                             <button type="submit" class="rounded-xl bg-gray-900 px-5 py-3 text-sm font-black text-white hover:bg-gray-800 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200">
                                 Filtruj
