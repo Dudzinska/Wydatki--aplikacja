@@ -44,17 +44,17 @@
                 <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900">
                     <h2 class="text-lg font-black text-gray-900 dark:text-gray-100">Wyszukiwarka i filtry</h2>
                     <form action="{{ route('groups.index') }}" method="GET" class="mt-5 grid gap-4 md:grid-cols-12 md:items-end">
-                        <div class="{{ auth()->user()->isAdmin() ? 'md:col-span-4' : 'md:col-span-6' }}">
-                            <label for="search" class="whitespace-nowrap text-sm font-bold text-gray-700 dark:text-gray-200">Szukaj po nazwie lub opisie</label>
+                        <div class="{{ auth()->user()->isAdmin() ? 'md:col-span-3' : 'md:col-span-6' }} min-w-0">
+                            <label for="search" class="text-sm font-bold text-gray-700 dark:text-gray-200">Szukaj po nazwie lub opisie</label>
                             <input id="search" type="search" name="search" value="{{ $filters['search'] ?? '' }}" maxlength="255" class="mt-1 w-full rounded-xl border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100">
                         </div>
                         @if(auth()->user()->isAdmin())
-                            <div class="md:col-span-3">
+                            <div class="min-w-0 md:col-span-3">
                                 <label for="owner" class="text-sm font-bold text-gray-700 dark:text-gray-200">Wlasciciel</label>
                                 <input id="owner" type="search" name="owner" value="{{ $filters['owner'] ?? '' }}" maxlength="255" class="mt-1 w-full rounded-xl border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100">
                             </div>
                         @endif
-                        <div class="{{ auth()->user()->isAdmin() ? 'md:col-span-3' : 'md:col-span-3' }}">
+                        <div class="min-w-0 md:col-span-3">
                             <label for="sort" class="text-sm font-bold text-gray-700 dark:text-gray-200">Sortowanie</label>
                             <select id="sort" name="sort" class="mt-1 w-full rounded-xl border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100">
                                 <option value="name_asc" @selected(($filters['sort'] ?? 'name_asc') === 'name_asc')>Nazwa A-Z</option>
@@ -65,11 +65,11 @@
                                 <option value="members_desc" @selected(($filters['sort'] ?? '') === 'members_desc')>Najwiecej osob</option>
                             </select>
                         </div>
-                        <div class="{{ auth()->user()->isAdmin() ? 'md:col-span-2' : 'md:col-span-3' }} flex flex-wrap gap-2 md:flex-nowrap md:justify-end">
-                            <button type="submit" class="rounded-xl bg-gray-900 px-5 py-3 text-sm font-black text-white hover:bg-gray-800 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200">
+                        <div class="grid grid-cols-2 gap-2 md:col-span-3">
+                            <button type="submit" class="w-full rounded-xl bg-gray-900 px-4 py-3 text-sm font-black text-white hover:bg-gray-800 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200">
                                 Filtruj
                             </button>
-                            <a href="{{ route('groups.index') }}" class="rounded-xl border border-gray-300 px-5 py-3 text-sm font-black text-gray-700 hover:border-indigo-400 hover:text-indigo-700 dark:border-gray-700 dark:text-gray-200 dark:hover:border-indigo-500 dark:hover:text-indigo-300">
+                            <a href="{{ route('groups.index') }}" class="w-full rounded-xl border border-gray-300 px-4 py-3 text-center text-sm font-black text-gray-700 hover:border-indigo-400 hover:text-indigo-700 dark:border-gray-700 dark:text-gray-200 dark:hover:border-indigo-500 dark:hover:text-indigo-300">
                                 Wyczyść
                             </a>
                         </div>
