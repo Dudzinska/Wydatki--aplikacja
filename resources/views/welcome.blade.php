@@ -65,9 +65,6 @@
                             <a href="{{ route('login') }}" class="inline-flex justify-center rounded-xl bg-white px-5 py-3 text-sm font-black text-fuchsia-700 hover:bg-fuchsia-50">
                                 Zaloguj sie
                             </a>
-                            <a href="{{ route('public.groups.index') }}" class="inline-flex justify-center rounded-xl border border-white/80 px-5 py-3 text-sm font-black text-white hover:bg-white/10">
-                                Przegladaj katalog
-                            </a>
                             @if(Route::has('register'))
                                 <a href="{{ route('register') }}" class="inline-flex justify-center rounded-xl border border-white/80 px-5 py-3 text-sm font-black text-white hover:bg-white/10">
                                     Utworz konto
