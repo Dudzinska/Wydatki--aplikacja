@@ -15,6 +15,7 @@ class GroupController extends Controller
         $filters = $request->validate([
             'search' => ['nullable', 'string', 'max:255'],
             'owner' => ['nullable', 'string', 'max:255'],
+            'sort' => ['nullable', 'in:name_asc,name_desc,newest,oldest,members_desc,bills_desc'],
         ]);
 
         $query = auth()->user()->isAdmin()
@@ -35,8 +36,18 @@ class GroupController extends Controller
                     $query->where('name', 'like', '%'.$filters['owner'].'%')
                         ->orWhere('email', 'like', '%'.$filters['owner'].'%');
                 });
-            })
-            ->orderBy('name')
+            });
+
+        match ($filters['sort'] ?? 'name_asc') {
+            'name_desc' => $groups->orderByDesc('name'),
+            'newest' => $groups->orderByDesc('created_at'),
+            'oldest' => $groups->orderBy('created_at'),
+            'members_desc' => $groups->orderByDesc('users_count')->orderBy('name'),
+            'bills_desc' => $groups->orderByDesc('bills_count')->orderBy('name'),
+            default => $groups->orderBy('name'),
+        };
+
+        $groups = $groups
             ->paginate(8)
             ->withQueryString();
 

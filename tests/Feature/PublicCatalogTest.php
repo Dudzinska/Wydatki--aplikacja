@@ -12,21 +12,29 @@ class PublicCatalogTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_guest_cannot_browse_group_catalog_and_details(): void
+    public function test_guest_can_browse_group_catalog_and_details_read_only(): void
     {
         $owner = User::factory()->create();
         $group = Group::create([
-            'name' => 'Chroniona grupa',
-            'description' => 'Dostepna po zalogowaniu',
+            'name' => 'Publiczna grupa',
+            'description' => 'Dostepna do publicznego podgladu',
             'owner_id' => $owner->id,
         ]);
         $group->users()->attach($owner->id);
 
         $this->get(route('public.groups.index'))
-            ->assertRedirect(route('login'));
+            ->assertOk()
+            ->assertSee('Publiczna grupa')
+            ->assertSee('Read-only')
+            ->assertDontSee('Edytuj')
+            ->assertDontSee('Usun');
 
         $this->get(route('public.groups.show', $group))
-            ->assertRedirect(route('login'));
+            ->assertOk()
+            ->assertSee('Podglad grupy')
+            ->assertSee('Publiczna grupa')
+            ->assertDontSee('Edytuj')
+            ->assertDontSee('Usun');
     }
 
     public function test_authenticated_user_can_browse_group_catalog_and_details(): void

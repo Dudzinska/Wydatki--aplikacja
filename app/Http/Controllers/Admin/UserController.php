@@ -15,6 +15,7 @@ class UserController extends Controller
         $filters = $request->validate([
             'search' => ['nullable', 'string', 'max:255'],
             'role' => ['nullable', 'in:user,admin'],
+            'sort' => ['nullable', 'in:name_asc,name_desc,newest,oldest,groups_desc'],
         ]);
 
         $users = User::query()
@@ -27,8 +28,17 @@ class UserController extends Controller
             })
             ->when($filters['role'] ?? null, function ($query, string $role) {
                 $query->where('role', $role);
-            })
-            ->orderBy('name')
+            });
+
+        match ($filters['sort'] ?? 'name_asc') {
+            'name_desc' => $users->orderByDesc('name'),
+            'newest' => $users->orderByDesc('created_at'),
+            'oldest' => $users->orderBy('created_at'),
+            'groups_desc' => $users->orderByDesc('groups_count')->orderBy('name'),
+            default => $users->orderBy('name'),
+        };
+
+        $users = $users
             ->paginate(10)
             ->withQueryString();
 

@@ -5,7 +5,7 @@
                 <p class="text-sm font-bold uppercase tracking-[0.22em] text-fuchsia-100">Katalog grup</p>
                 <h1 class="mt-4 text-3xl font-black sm:text-4xl">Przegladaj grupy</h1>
                 <p class="mt-4 max-w-3xl text-sm leading-7 text-fuchsia-50/95">
-                    Dostep do danych grup i wydatkow wymaga zalogowania.
+                    Ten widok jest publiczny i tylko do odczytu. Zaloguj sie, aby tworzyc, edytowac lub usuwac wlasne grupy.
                 </p>
             </section>
 
@@ -52,7 +52,7 @@
                         <div class="flex items-start justify-between gap-4">
                             <h3 class="text-xl font-black text-slate-900 dark:text-slate-100">{{ $group->name }}</h3>
                             <span class="rounded-full bg-fuchsia-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-fuchsia-700 dark:bg-fuchsia-950 dark:text-fuchsia-200">
-                                Zalogowany
+                                Read-only
                             </span>
                         </div>
                         <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
